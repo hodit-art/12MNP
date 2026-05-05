@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 df = pd.read_csv("student_scores.csv")
-X = df['Hours']
-Y = df['Scores']
+X = df.iloc[:, :-1].values  # features
+Y = df.iloc[:, -1].values 
+
 X
